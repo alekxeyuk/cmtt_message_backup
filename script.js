@@ -50,7 +50,7 @@ for (let user of users) {
         let js = await r.json();
         if (js.data.messages.length) {
             user_messages.push(...js.data.messages);
-            beforeTime = js.data.messages[0].dtCreated
+            beforeTime = js.data.messages[0].dtCreated;
         } else {
             break;
         }
