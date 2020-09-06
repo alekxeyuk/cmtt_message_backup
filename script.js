@@ -5,7 +5,12 @@ var _loadScript = path => {
     script.src = path;
     document.head.appendChild(script);
 };
-_loadScript('https://stuk.github.io/jszip/dist/jszip.js');
+async function loadScript(url) {
+  let response = await fetch(url);
+  let script = await response.text();
+  eval(script);
+}
+await loadScript('https://stuk.github.io/jszip/dist/jszip.js');
 _loadScript('https://stuk.github.io/jszip/vendor/FileSaver.js');
 
 var page = 1;
