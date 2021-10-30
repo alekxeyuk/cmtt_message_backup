@@ -122,20 +122,25 @@ for (let user of users) {
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://gist.githubusercontent.com/alekxeyuk/d0df7e51ca69cd0494f53a89dba5277e/raw/f37f3f89faeb90fb560c94c9cd9caffdce7774b2/main.ba62a524.min.css">
         <script>
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "https://gist.githubusercontent.com/alekxeyuk/d0df7e51ca69cd0494f53a89dba5277e/raw/15dbe81c9ca5aeac061b61ac691805aa2516528f/messages_backup.css", true);
-            xhttp.onreadystatechange = function() {
-                if (xhttp.readyState === 4) {
-                    if (xhttp.status === 200) {
-                        let link = document.createElement('style');
-                        link.innerHTML = xhttp.responseText;
-                        document.getElementsByTagName('head')[0].appendChild(link);
+            let styles = [
+                "https://gist.githubusercontent.com/alekxeyuk/d0df7e51ca69cd0494f53a89dba5277e/raw/f37f3f89faeb90fb560c94c9cd9caffdce7774b2/main.ba62a524.min.css",
+                "https://gist.githubusercontent.com/alekxeyuk/d0df7e51ca69cd0494f53a89dba5277e/raw/15dbe81c9ca5aeac061b61ac691805aa2516528f/messages_backup.css"
+            ];
+            styles.forEach(style => {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", style, true);
+                xhttp.onreadystatechange = function() {
+                    if (xhttp.readyState === 4) {
+                        if (xhttp.status === 200) {
+                            let link = document.createElement('style');
+                            link.innerHTML = xhttp.responseText;
+                            document.getElementsByTagName('head')[0].appendChild(link);
+                    }
+                  }
                 }
-              }
-            }
-            xhttp.send(null);
+                xhttp.send(null);
+            });
         </script>
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.2/dist/lazyload.min.js"></script>
     </head>
