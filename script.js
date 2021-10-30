@@ -120,7 +120,7 @@ for (let user of users) {
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://dtfstaticbf19cf1-a.akamaihd.net/static/build/dtf.ru/all.c629faf6.min.css">
+        <link rel="stylesheet" href="https://raw.githubusercontent.com/alekxeyuk/dtf_message_backup/master/main.ba62a524.min.css">
         <script>
             var xhttp = new XMLHttpRequest();
             xhttp.open("GET", "https://gist.githubusercontent.com/alekxeyuk/d0df7e51ca69cd0494f53a89dba5277e/raw/15dbe81c9ca5aeac061b61ac691805aa2516528f/messages_backup.css", true);
