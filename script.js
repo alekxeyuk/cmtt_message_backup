@@ -1,3 +1,5 @@
+let ochoba_site = window.location.hostname;
+
 var _loadScript = path => {
     let script = document.createElement('script');
     script.type = 'text/javascript';
@@ -16,7 +18,7 @@ _loadScript('https://stuk.github.io/jszip/vendor/FileSaver.js');
 var page = 1;
 var users = [];
 while (page) {
-    r = await fetch(`https://dtf.ru/m/channels?page=${page}`, {
+    r = await fetch(`https://${ochoba_site}/m/channels?page=${page}`, {
         "headers": {
         "x-this-is-csrf": "THIS IS SPARTA!",
     },
@@ -43,7 +45,7 @@ for (let user of users) {
     let text_messages = [];
     let beforeTime = 0;
     while (true) {
-        r = await fetch(`https://dtf.ru/m/messages?channelId=${user.id}&beforeTime=${beforeTime}`, {
+        r = await fetch(`https://${ochoba_site}/m/messages?channelId=${user.id}&beforeTime=${beforeTime}`, {
             "headers": {
             "x-this-is-csrf": "THIS IS SPARTA!",
         },
@@ -120,7 +122,7 @@ for (let user of users) {
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://raw.githubusercontent.com/alekxeyuk/dtf_message_backup/master/main.ba62a524.min.css">
+        <link rel="stylesheet" href="https://gist.githubusercontent.com/alekxeyuk/d0df7e51ca69cd0494f53a89dba5277e/raw/f37f3f89faeb90fb560c94c9cd9caffdce7774b2/main.ba62a524.min.css">
         <script>
             var xhttp = new XMLHttpRequest();
             xhttp.open("GET", "https://gist.githubusercontent.com/alekxeyuk/d0df7e51ca69cd0494f53a89dba5277e/raw/15dbe81c9ca5aeac061b61ac691805aa2516528f/messages_backup.css", true);
